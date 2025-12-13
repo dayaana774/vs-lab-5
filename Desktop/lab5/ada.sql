@@ -1,0 +1,11 @@
+CREATE TABLE institutes ( 
+id SERIAL PRIMARY KEY ,
+name VARCHAR(1024) NOT NULL
+);
+
+CREATE TABLE groups ( 
+id SERIAL PRIMARY KEY, 
+name VARCHAR(2048) NOT NULL,
+short_name VARCHAR(64) NOT NULL UNIQUE,
+year INT,
+intitute_id INT NOT NULL);
