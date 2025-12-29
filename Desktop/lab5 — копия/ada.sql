@@ -31,3 +31,16 @@ VALUES ('12', 'АММОСОВА', 'ДАЙААНА', NULL, '1'),
 SELECT * FROM students;
 SELECT * FROM institutes;
 SELECT * FROM groups;
+
+CREATE TABLE kafedras ( 
+id SERIAL PRIMARY KEY, 
+name VARCHAR(255) NOT NULL,
+chief VARCHAR(255) NOT NULL);
+ALTER TABLE groups ADD kafedras_id INT;
+INSERT INTO kafedras (name, chief) VALUES 
+('Кафедра Информационных Технологий', 'Васильева Наталья Васильевна'),
+('Математическая экономика и прикладная информатика', 'Матвеева Ньюргуяна Николаевна' );
+SELECT * FROM kafedras;
+UPDATE groups SET kafedras_id=1 where intitute_id IN(1,2,3);
+UPDATE groups SET kafedras_id=2 where intitute_id IN(4);
+SELECT * FROM groups where kafedras_id IN(1);
